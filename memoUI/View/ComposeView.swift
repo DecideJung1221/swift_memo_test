@@ -10,6 +10,8 @@ import SwiftUI
 struct ComposeView: View {
     @EnvironmentObject var store: MemoStore
     
+    var memo: Memo? = nil
+    
     //메모 창 닫기 dismiss방법을 이용
     @Environment(\.dismiss) var dismiss
     
@@ -21,8 +23,13 @@ struct ComposeView: View {
             VStack{
                 TextEditor(text: $content)
                     .padding()
+                    .onAppear{
+                        if let memo = memo{
+                            content = memo.content
+                        }
+                    }
             }
-            .navigationTitle("새메모")
+            .navigationTitle(memo != nil ? "메모편집" :"새메모")
             .navigationBarTitleDisplayMode(.inline)
             //large title 모드는 사용하지 않음
             
@@ -43,8 +50,14 @@ struct ComposeView: View {
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button{
-//                        위의 texteditor의 text를 content로 받음
-                        store.insert(memo: content)
+                        if let memo = memo{
+                            store.update(memo: memo, content: content)
+                        }else{
+                            
+    //                        위의 texteditor의 text를 content로 받음
+                            store.insert(memo: content)
+                        }
+                        
                         dismiss()
                     }label: {
                         Text("저장")
