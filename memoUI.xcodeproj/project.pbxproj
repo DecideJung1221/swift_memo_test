@@ -20,6 +20,7 @@
 		988E67472BAECBFD000102BF /* MemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E67462BAECBFD000102BF /* MemoStore.swift */; };
 		988E674A2BAED28D000102BF /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E67492BAED28D000102BF /* MemoCell.swift */; };
 		988E674C2BAED343000102BF /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E674B2BAED343000102BF /* ComposeView.swift */; };
+		988E674E2BAED8C9000102BF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E674D2BAED8C9000102BF /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		988E67462BAECBFD000102BF /* MemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStore.swift; sourceTree = "<group>"; };
 		988E67492BAED28D000102BF /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		988E674B2BAED343000102BF /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
+		988E674D2BAED8C9000102BF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				988E67402BAEC9B0000102BF /* MainListView.swift */,
 				988E67492BAED28D000102BF /* MemoCell.swift */,
 				988E674B2BAED343000102BF /* ComposeView.swift */,
+				988E674D2BAED8C9000102BF /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				988E674A2BAED28D000102BF /* MemoCell.swift in Sources */,
+				988E674E2BAED8C9000102BF /* DetailView.swift in Sources */,
 				988E671B2BAEC945000102BF /* Persistence.swift in Sources */,
 				988E67412BAEC9B0000102BF /* MainListView.swift in Sources */,
 				988E67122BAEC944000102BF /* memoUIApp.swift in Sources */,
