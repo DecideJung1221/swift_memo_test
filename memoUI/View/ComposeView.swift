@@ -45,6 +45,7 @@ struct ComposeView: View {
                     Button{
 //                        위의 texteditor의 text를 content로 받음
                         store.insert(memo: content)
+                        dismiss()
                     }label: {
                         Text("저장")
                     }

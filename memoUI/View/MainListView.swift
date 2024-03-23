@@ -10,6 +10,8 @@ import SwiftUI
 struct MainListView: View {
     @EnvironmentObject var store: MemoStore
     
+    //compose뷰를 사용할 때 이용
+    @State private var showComposer: Bool = false
     
     var body: some View {
         NavigationView{
@@ -20,6 +22,17 @@ struct MainListView: View {
             }
             .listStyle(.plain)
             .navigationTitle("내 메모")
+            .toolbar{
+                Button{
+                    showComposer = true
+                }label: {
+                    Image(systemName: "plus")
+                }
+            }
+            //새로운 메모를 모달로 표시!
+            .sheet(isPresented: $showComposer, content: {
+                ComposeView()
+            })
         }
     }
 }
