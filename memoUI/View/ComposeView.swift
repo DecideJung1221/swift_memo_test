@@ -19,7 +19,7 @@ struct ComposeView: View {
     
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 TextEditor(text: $content)
                     .padding()
@@ -29,7 +29,7 @@ struct ComposeView: View {
                         }
                     }
             }
-            .navigationTitle(memo != nil ? "메모편집" :"새메모")
+            .navigationTitle(memo != nil ? "메모편집" : "새메모")
             .navigationBarTitleDisplayMode(.inline)
             //large title 모드는 사용하지 않음
             

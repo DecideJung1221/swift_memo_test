@@ -13,7 +13,12 @@ struct DetailView: View {
     @EnvironmentObject var store: MemoStore
     
     @State private var showCompose = false
+    @State private var showDeleteAlert = false
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
+        VStack{
         VStack{
             ScrollView{
                 VStack{
@@ -34,7 +39,8 @@ struct DetailView: View {
         .navigationTitle("메모보기")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
-            ToolbarItemGroup(placement: .bottomBar) {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                
                 Button{
                     showCompose = true
                 }label: {
@@ -45,6 +51,29 @@ struct DetailView: View {
         .sheet(isPresented: $showCompose, content: {
             ComposeView(memo: memo)
         })
+            
+
+            Button{
+                showDeleteAlert = true
+            }label: {
+                Image(systemName: "trash")
+            }
+            .foregroundColor(.red)
+            .alert("삭제확인", isPresented: $showDeleteAlert)
+            {
+                Button(role: .destructive){
+                    store.delete(memo: memo)
+                    dismiss()
+                }label: {
+                    Text("삭제")
+                }
+            }message: {
+                Text("삭제할까요?")
+            }
+            
+        
+        }
+        
     }
 }
 
